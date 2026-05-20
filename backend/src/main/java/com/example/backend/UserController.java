@@ -6,7 +6,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RequiredArgsConstructor
 public class UserController {
 
@@ -20,7 +20,7 @@ public class UserController {
         if (username == null || username.isBlank()) throw new RuntimeException("아이디를 입력해주세요.");
         if (password == null || password.isBlank()) throw new RuntimeException("비밀번호를 입력해주세요.");
         if (userRepository.findByUsername(username).isPresent()) throw new RuntimeException("이미 사용 중인 아이디입니다.");
-        return userRepository.save(new User(null, username, password, "USER"));
+        return userRepository.save(new User(null, username, password, "USER", null));
     }
 
     @PostMapping("/login")
@@ -36,9 +36,9 @@ public class UserController {
         userRepository.deleteAll();
         productRepository.deleteAll();
 
-        userRepository.save(new User(null, "admin", "1234", "ADMIN"));
-        userRepository.save(new User(null, "user1", "1234", "USER"));
-        userRepository.save(new User(null, "user2", "1234", "USER"));
+        userRepository.save(new User(null, "admin", "1234", "ADMIN", null));
+        userRepository.save(new User(null, "user1", "1234", "USER", null));
+        userRepository.save(new User(null, "user2", "1234", "USER", null));
 
         productRepository.save(createExampleProduct("빈티지 자전거", 150000L, "admin", "서울 강남구", "bike.jpg", Category.OTHER, "상태 양호한 빈티지 자전거입니다. 직거래 선호."));
         productRepository.save(createExampleProduct("중고 아이패드", 450000L, "user1", "대구 중구", "ipad.jpg", Category.ELECTRONICS, "아이패드 5세대, 케이스 포함. 배터리 90% 이상."));

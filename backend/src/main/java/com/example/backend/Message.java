@@ -5,23 +5,25 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
-public class User {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long senderId;
+    private Long receiverId;
+    private Long productId;
 
-    private String username;
-    private String password;
-    private String role;
+    @Lob
+    private String content;
+
     private LocalDateTime createdAt;
+    private Boolean isRead = false;
 
     @PrePersist
     protected void onCreate() {
-        if (this.createdAt == null) this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();
     }
 }

@@ -8,7 +8,29 @@
       "PowerShell(netstat *)",
       "PowerShell(Get-Process *)",
       "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8081/api/auth/setup\" -Method POST 2>&1)",
-      "PowerShell(taskkill *)"
+      "PowerShell(taskkill *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\정지훈\\\\react\\\\resellmarket\" -Recurse -File | Where-Object { $_.Extension -eq '.java' } | Select-Object FullName)",
+      "Bash(dir *.java)",
+      "PowerShell(cd \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\정지훈\\\\react\\\\resellmarket\\\\backend\"; $env:JAVA_HOME = \"C:\\\\Program Files\\\\Java\\\\jdk-17\"; .\\\\mvnw.cmd clean spring-boot:run 2>&1 | Select-Object -First 80)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Java\\\\jdk-17\"; cd \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\정지훈\\\\react\\\\resellmarket\\\\backend\"; .\\\\mvnw.cmd clean spring-boot:run 2>&1 | Select-Object -First 80)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Java\\\\jdk-17\"; echo $env:JAVA_HOME; & \"C:\\\\Program Files\\\\Java\\\\jdk-17\\\\bin\\\\java.exe\" -version)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-17.0.19.10-hotspot\"; cd \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\정지훈\\\\react\\\\resellmarket\\\\backend\"; .\\\\mvnw.cmd clean spring-boot:run 2>&1 | Select-Object -First 80)",
+      "Bash(curl -s http://localhost:8081/api/items)",
+      "Bash(curl -s -X POST http://localhost:8081/api/auth/setup)",
+      "Bash(curl -s \"http://localhost:8081/api/items\")",
+      "Bash(python -c \"import sys,json; items=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in items[0].items\\(\\)},ensure_ascii=False,indent=2\\)\\)\")",
+      "Bash(python3 -c \"import sys,json; items=json.load\\(sys.stdin\\); [print\\(k,'=',v\\) for k,v in items[0].items\\(\\)]\")",
+      "Bash(curl -s \"http://localhost:8081/api/items?tradeType=DIRECT\")",
+      "Bash(curl -s \"http://localhost:8081/api/messages/unread-count?userId=1\")",
+      "Bash(curl -s -X POST http://localhost:8081/api/messages -H \"Content-Type: application/json\" -d '{\"senderId\":2,\"receiverUsername\":\"admin\",\"productId\":1,\"content\":\"안녕하세요! 자전거 아직 판매중인가요?\"}')",
+      "Bash(curl -s \"http://localhost:8081/api/messages/inbox?userId=1\")",
+      "Bash(curl -s -X POST http://localhost:8081/api/messages -H \"Content-Type: application/json; charset=utf-8\" -d \"{\\\\\"senderId\\\\\":2,\\\\\"receiverUsername\\\\\":\\\\\"admin\\\\\",\\\\\"productId\\\\\":1,\\\\\"content\\\\\":\\\\\"Hello test message\\\\\"}\")",
+      "Bash(curl *)",
+      "PowerShell(Tee-Object *)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-17.0.19.10-hotspot\"; cd \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\정지훈\\\\react\\\\resellmarket\\\\backend\"; .\\\\mvnw.cmd spring-boot:run)",
+      "PowerShell(npm start *)",
+      "PowerShell(Invoke-RestMethod -Method POST -Uri \"http://localhost:8081/api/auth/setup\")",
+      "PowerShell(Invoke-RestMethod -Method GET -Uri \"http://localhost:8081/api/items\")"
     ]
   }
 }

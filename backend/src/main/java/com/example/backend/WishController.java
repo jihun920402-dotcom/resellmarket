@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/wishes")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RequiredArgsConstructor
 public class WishController {
 
