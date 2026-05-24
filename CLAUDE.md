@@ -102,7 +102,7 @@ Spring Boot 3.2.5 / Java 17, H2 in-memory DB (`ddl-auto=update`). 재시작 시 
 - `Report` — id, productId, reporterId, reason, createdAt(`@PrePersist`)
 - Enums: `Category` (ELECTRONICS/FURNITURE/CLOTHING/OTHER), `ProductStatus` (SELLING/SOLD), `TradeType` (DIRECT/DELIVERY/BOTH)
 
-**File uploads:** 이미지는 `resellmarket/uploads/`에 저장. `ProductController`와 `WebConfig` 모두 `Paths.get(user.dir).getParent().resolve("uploads")`로 backend 상위 폴더를 가리킴. 샘플 이미지(`bike.jpg`, `ipad.jpg`, `chair.jpg`)는 `uploads/`에 미리 존재.
+**File uploads:** 이미지는 `resellmarket/uploads/`에 저장. `ProductController`와 `WebConfig` 모두 `Paths.get(user.dir).getParent().resolve("uploads")`로 backend 상위 폴더를 가리킴. 샘플 이미지(`bike.jpg`, `ipad.jpg`, `chair.jpg`, `shoes.jpg`, `keyboard.jpg`, `desk.jpg`)는 `uploads/`에 미리 존재.
 
 **Auth:** DB 직접 조회 방식 (JWT/세션/해싱 없음).
 
